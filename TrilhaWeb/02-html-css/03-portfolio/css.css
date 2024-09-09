@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #1E1E1E;
+    --white: #f1f1f1; /* Corrigido de 'write' para 'white' */
+    --roxo: #B336FF;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 2rem;
+    background: var(--black);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.header a {
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--white);
+    font-size: 30px;
+}
+
+.wrapper1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.profile {
+    position: relative;
+    margin: 1rem; /* Adiciona uma margem para melhor visualização */
+}
+
+.profile img {
+    display: block;
+    width: 250px;
+    border-radius: 150px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.918);
+    z-index: 5;
+    height: 245px;
+    border-radius: 150px;
+}
+
+.lampada {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centraliza a lâmpada horizontalmente */
+}
+
+.lampada img {
+    width: auto;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente os itens dentro da .container */
+    justify-content: space-between; /* Mantém os itens da .container espaçados */
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+}
+
+.text h1 {
+    font-size: 50px;
+    color: var(--white);
+}
+
+.text span {
+    color: var(--roxo);
+}
+
+.text p {
+    text-align: center;
+    margin-right: 40px;
+    color: var(--white);
+}
+
+@media screen and (max-width: 730px) {
+    .header {
+        height: 50px;
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+        flex-direction: column; /* Adapta a direção para coluna em telas menores */
+        align-items: center;
+    }
+
+    .wrapper1 {
+        display: flex;
+        flex-direction: row; /* Alinha itens em coluna em telas menores */
+        justify-content: center;
+        align-items: center; /* Centraliza verticalmente os itens */
+    }
+
+    .profile img {
+        width: 150px;
+    }
+
+    .overlay {
+        height: 150px;
+    }
+
+    .lampada img {
+        width: 40vw;
+    }
+}
+
+/* Light mode */
+
+body.lightmode .lampada img#light {
+    content: url('./assets/dark buld.png');
+}
+
+body:not(.lightmode) .lampada img#light {
+    content: url('./assets/light bulb.png');
+}
+
+.lightmode {
+    background-color: var(--white);
+}
+
+.lightmode .header a {
+    color: var(--black);
+}
+
+.lightmode span {
+    color: var(--black);
+}
+
+.lightmode h1 {
+    color: var(--black);
+}
+
+.lightmode p {
+    color: var(--black);
+}
+
+.lightmode .overlay {
+    background-color: transparent;
+}
