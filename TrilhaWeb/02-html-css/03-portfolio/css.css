@@ -38,6 +38,9 @@ body {
     color: var(--white);
     font-size: 30px;
 }
+.modal{
+    display: none;
+}
 .links{
     display: flex;
     flex-direction: row;
@@ -126,6 +129,11 @@ body {
     align-items: center;
     height: 50px;
 }
+.text-tec p{
+    font-size: 30px;
+    font-weight: 400;
+
+}
 .tec-container{
     display: flex;
     justify-content: space-evenly;
@@ -144,6 +152,12 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
 }
+.tec-front img{
+    width: 40px;
+}
+.tec-back img{
+    width: 40px;
+}
 .tec-back{
     padding: 2rem;
     width: 100%;
@@ -152,7 +166,15 @@ body {
     gap: 1rem;
     flex-wrap: wrap;
 }
-
+.tec-back p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110%;
+    height: 50px;
+    border: 1px solid #f1f1f1;
+    border-radius: 20px;
+}
 .colunm{
     padding: 2rem;
     display: flex;
@@ -206,13 +228,29 @@ body {
     justify-content: center;
     align-items: center;
 }
+.tec-front p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110%;
+    height: 50px;
+    border: 1px solid #f1f1f1;
+    border-radius: 20px;
+}
 
 @media screen and (max-width: 730px) {
+    .modal{
+        display: block;
+    }
+    .links{
+        display: none;
+    }
     .header {
         height: 50px;
         padding: 1rem;
     }
 
+    
     .container {
         padding: 1rem;
         flex-direction: column; 
@@ -280,6 +318,10 @@ body:not(.lightmode) .lampada img#light {
     content: url('./assets/light bulb.png');
 }
 
+
+
+
+
 .lightmode {
     background-color: var(--white);
 }
@@ -307,4 +349,12 @@ body:not(.lightmode) .lampada img#light {
 }
 .lightmode .about p{
     border-bottom: 5px solid #1E1E1E ;
+}
+.lightmode .tec-back p{
+    border: 1px solid #000000;
+
+}
+.lightmode .tec-front p{
+    border: 1px solid #000000;
+
 }
