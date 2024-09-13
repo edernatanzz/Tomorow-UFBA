@@ -138,6 +138,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
+    align-items: start;
 }
 .tec-title{
     padding: 2rem;
