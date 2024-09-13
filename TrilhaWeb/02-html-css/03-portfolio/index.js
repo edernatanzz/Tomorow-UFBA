@@ -5,10 +5,9 @@ light.addEventListener('click', () => {
     body.classList.toggle('lightmode');
 });
 
-
 const modal = document.querySelector('dialog')
 function openModal(){
-    modal.showModal()
+    modal.showModal();
 }
 function closeModal(){
     modal.close();
