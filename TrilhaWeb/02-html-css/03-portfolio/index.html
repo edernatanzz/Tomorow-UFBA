@@ -16,15 +16,24 @@
 
     <main>
         <div class="header">
-            <div class="logo"><a href="#">logo</a></div> <!-- Corrigido o href para # -->
+            <div class="logo"><a href="#">logo</a></div> 
             <div class="links">
                 <a href="#">Home</a>
                 <a href="#">About</a>
                 <a href="#">Projects</a>
-                <a href="#">Contact</a> <!-- Corrigido "Contacte me" para "Contact" -->
+                <a href="#">Contact</a> 
             </div>
             <div class="modal">
-                <img src="assets/light/menu-alt-left-regular-24(1).png" alt="">
+                <img onclick="openModal()" src="assets/light/menu-alt-left-regular-24(1).png" alt="">
+                <dialog class="modal-open">
+                    <div class="links-modal">
+                    <a href="#" onclick="closeModal()">Home</a>
+                    <a href="#about"  onclick="closeModal()">About</a>
+                    <a href="#projects"onclick="closeModal()">Projects</a>
+                    <a href="#forms"onclick="closeModal()">Contact</a>
+                </div>
+                    <button onclick="closeModal()">X</button>
+                </dialog>
             </div>
         </div>
 
@@ -48,7 +57,7 @@
             </div>
         </div>
 
-        <div class="tec">
+        <div class="tec" id="about">
             <div class="text-tec">
                 <p>TECNOLOGIAS</p>
             </div>
@@ -81,7 +90,7 @@
                 </div>
             </div>
         </div>
-        <div class="projetos">
+        <div class="projetos" id="projects">
             <div class="text-tec">
                 <p>PROJECTS</p>
             </div>
@@ -121,7 +130,7 @@
 
 
         </div>
-        <div class="contact-form">
+        <div class="contact-form" id="forms">
             <h2>Contato</h2>
             <form action="/" method="POST">
                 <div class="form-group">

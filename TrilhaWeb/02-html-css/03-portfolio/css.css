@@ -378,9 +378,6 @@ button:hover {
 
 
 
-
-
-
 /* Light mode */
 
 body.lightmode .lampada img#light {
@@ -390,9 +387,6 @@ body.lightmode .lampada img#light {
 body:not(.lightmode) .lampada img#light {
     content: url('./assets/light bulb.png');
 }
-
-
-
 
 
 .lightmode {
@@ -456,6 +450,30 @@ body.lightmode button {
     color: var(--white);
 }
 
+.lightmode .links-modal p{
+    color: var(--black);
+}
 
-/* Light mode */
 
+/*Modal */
+
+.modal img{
+    cursor: pointer;
+}
+
+.modal dialog{
+    height: 100%;
+    width: 100%;
+    z-index: 9999999999;
+}
+.links-modal{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.links-modal a{
+    color: var(--black);
+}
