@@ -6,7 +6,7 @@
 
 :root {
     --black: #1E1E1E;
-    --white: #f1f1f1; /* Corrigido de 'write' para 'white' */
+    --white: #f1f1f1; 
     --roxo: #B336FF;
 }
 
@@ -37,17 +37,21 @@ body {
     color: var(--white);
     font-size: 30px;
 }
-
+.links{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
 .wrapper1 {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centraliza os itens horizontalmente */
+    justify-content: center;
 }
 
 .profile {
     position: relative;
-    margin: 1rem; /* Adiciona uma margem para melhor visualização */
+    margin: 1rem;
 }
 
 .profile img {
@@ -72,7 +76,7 @@ body {
 .lampada {
     width: 100%;
     display: flex;
-    justify-content: center; /* Centraliza a lâmpada horizontalmente */
+    justify-content: center;
 }
 
 .lampada img {
@@ -85,8 +89,8 @@ body {
     padding: 2rem;
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centraliza verticalmente os itens dentro da .container */
-    justify-content: space-between; /* Mantém os itens da .container espaçados */
+    align-items: center;
+    justify-content: space-between;
 }
 
 .text {
@@ -108,8 +112,97 @@ body {
 
 .text p {
     text-align: center;
-    margin-right: 40px;
     color: var(--white);
+}
+
+
+.tec{
+    width: 100%;
+}
+.text-tec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+.tec-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.tec-title{
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+.tec-front{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.tec-back{
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.colunm{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+
+.imgs-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    flex-wrap: wrap;
+}
+.img-wrapper{
+    padding: 2rem;
+}
+.img-wrapper img{
+    border-radius: 20px;
+ width: 100%;
+}
+.description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: green;
+    
+}
+
+.about{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    text-align: center;
+    
+}
+.about p{
+    width: 90px;
+    height: 30px;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 50px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media screen and (max-width: 730px) {
@@ -120,15 +213,15 @@ body {
 
     .container {
         padding: 1rem;
-        flex-direction: column; /* Adapta a direção para coluna em telas menores */
+        flex-direction: column; 
         align-items: center;
     }
 
     .wrapper1 {
         display: flex;
-        flex-direction: row; /* Alinha itens em coluna em telas menores */
+        flex-direction: row; 
         justify-content: center;
-        align-items: center; /* Centraliza verticalmente os itens */
+        align-items: center; 
     }
 
     .profile img {
@@ -142,7 +235,29 @@ body {
     .lampada img {
         width: 40vw;
     }
+    .text{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+    .text p{
+        padding: ;
+    }
+
+    .tec-container{
+        display: flex;
+        justify-content: center;
+    }
+
+    .imgs-container{
+        display: flex;
+        flex-direction: column;
+    }
 }
+
+
+
 
 /* Light mode */
 
