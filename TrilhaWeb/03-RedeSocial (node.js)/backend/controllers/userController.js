@@ -34,8 +34,6 @@ exports.createUser = async (req, res) => {
             console.error('Erro ao criar usuário:', err);
             return res.status(500).send('Erro ao criar usuário');
           }
-  
-          // Retornar resposta de sucesso
           res.status(201).json({ message: 'Usuário criado com sucesso!', userId: result.insertId });
         });
       });
@@ -44,4 +42,27 @@ exports.createUser = async (req, res) => {
       console.error('Erro:', error);
       res.status(500).send('Erro ao processar a requisição');
     }
+  };
+
+  exports.deleteUser = (req, res) => {
+    const userId = req.params.id; 
+  
+    if (!userId) {
+      return res.status(400).send('ID do usuário é obrigatório');
+    }
+  
+    const deleteUserQuery = 'DELETE FROM usuarios WHERE id = ?';
+  
+    connection.query(deleteUserQuery, [userId], (err, result) => {
+      if (err) {
+        console.error('Erro ao deletar usuário:', err);
+        return res.status(500).send('Erro ao deletar usuário');
+      }
+  
+      if (result.affectedRows === 0) {
+        return res.status(404).send('Usuário não encontrado');
+      }
+  
+      res.status(200).send('Usuário deletado com sucesso!');
+    });
   };
