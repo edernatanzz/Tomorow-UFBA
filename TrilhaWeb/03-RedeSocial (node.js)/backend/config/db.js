@@ -6,7 +6,6 @@ const connection = mysql.createConnection({
   database: 'alunonode'
 });
 
-// Conexão ao banco de dados
 connection.connect((err) => {
   if (err) {
     console.error('Erro ao conectar ao MySQL:', err);
@@ -14,7 +13,6 @@ connection.connect((err) => {
   }
   console.log('Conectado ao MySQL!');
 
-  // Criar tabela 'usuarios' se não existir
   const criarUsuario = `
     CREATE TABLE IF NOT EXISTS usuarios (
       id INT AUTO_INCREMENT PRIMARY KEY,
@@ -33,5 +31,4 @@ connection.connect((err) => {
   });
 });
 
-// Exportar a conexão para ser utilizada em outros módulos
 module.exports = connection;
