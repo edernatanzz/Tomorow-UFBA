@@ -1,0 +1,21 @@
+my-react-app/
+├── public/                    # Arquivos estáticos, como o index.html e ícones
+│   ├── index.html
+│   └── favicon.ico
+├── src/                       # Código-fonte do projeto
+│   ├── assets/                 # Imagens, fontes, e outros arquivos estáticos
+│   ├── components/             # Componentes reutilizáveis (ex: Button, Header, etc.)
+│   ├── hooks/                  # Hooks personalizados (ex: useAuth, useFetch, etc.)
+│   ├── pages/                  # Componentes representando páginas (ex: Home, About, etc.)
+│   ├── services/               # Funções que lidam com lógica externa (ex: chamadas de API)
+│   ├── store/                  # Estado global (se estiver usando Redux, Context API, etc.)
+│   ├── utils/                  # Funções utilitárias que são usadas em todo o projeto
+│   ├── App.js                  # Componente principal do React
+│   ├── index.js                # Ponto de entrada do React (onde o App é renderizado)
+│   └── styles/                 # Arquivos de estilo globais, temas, ou styled-components
+├── .gitignore                  # Arquivos ou pastas para serem ignorados pelo Git
+├── package.json                # Dependências e scripts do projeto
+├── package-lock.json           # Versões fixas das dependências (para npm)
+└── README.md                   # Documentação do projeto
+
+
