@@ -1,12 +1,19 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from './components/header';
+import Banner from './components/banner';
+import Card from './components/card';
+import ProductList from './components/products';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <h1>Meu novo projeto React!</h1>
-    </div>
+    <>
+    <Header/>
+    <Banner/>
+    <Card/>
+    <ProductList/>
+    
+    </>
   );
 }
 
