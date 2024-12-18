@@ -1,11 +1,99 @@
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+`;
+
+const Title = styled.h1`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+`;
+
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const ProductImage = styled.img`
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+`;
+
+const ProductTitle = styled.h2`
+  font-size: 18px;
+  margin: 10px 0;
+`;
+
+const Description = styled.p`
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  flex-grow: 1;
+`;
+
+const CardFooter = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: auto;
+`;
+
+const Price = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  color: #2a9d8f;
+`;
+
+const CartButton = styled.button`
+  background-color: #ff7f50;
+  color: white;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ff6347;
+  }
+`;
+
+const LoadingMessage = styled.div`
+  text-align: center;
+  font-size: 20px;
+  margin-top: 50px;
+`;
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Busca os produtos da Fake Store API
     fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
       .then((data) => {
@@ -19,69 +107,30 @@ const ProductList = () => {
   }, []);
 
   if (loading) {
-    return <div>Carregando...</div>;
+    return <LoadingMessage> vazio </LoadingMessage>;
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Lista de Produtos</h1>
-      <div style={styles.grid}>
+    <Container>
+      <Title>Lista de Produtos</Title>
+      <Grid>
         {products.map((product) => (
-          <div key={product.id} style={styles.card}>
-            <img src={product.image} alt={product.title} style={styles.image} />
-            <h2 style={styles.productTitle}>{product.title}</h2>
-            <p style={styles.description}>{product.description}</p>
-            <p style={styles.price}>R$ {product.price.toFixed(2)}</p>
-          </div>
+          <Card key={product.id}>
+            <ProductImage src={product.image} alt={product.title} />
+            <ProductTitle>{product.title}</ProductTitle>
+            <Description>{product.description}</Description>
+            <CardFooter>
+              <Price>R$ {product.price.toFixed(2)}</Price>
+              <CartButton onClick={() => alert("Produto Adicionado ao Carrinho")}>
+                🛒 Adicionar ao Carrinho
+              </CartButton>
+            </CardFooter>
+          </Card>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Container>
   );
 };
 
-// Estilização básica inline
-const styles = {
-  container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '20px',
-    fontFamily: 'Arial, sans-serif',
-  },
-  title: {
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-    gap: '20px',
-  },
-  card: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '15px',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    textAlign: 'center',
-  },
-  image: {
-    width: '100%',
-    height: '200px',
-    objectFit: 'contain',
-  },
-  productTitle: {
-    fontSize: '18px',
-    margin: '10px 0',
-  },
-  description: {
-    fontSize: '14px',
-    color: '#555',
-    marginBottom: '10px',
-  },
-  price: {
-    fontSize: '16px',
-    fontWeight: 'bold',
-    color: '#2a9d8f',
-  },
-};
 
 export default ProductList;

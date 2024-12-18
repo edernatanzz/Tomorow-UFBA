@@ -4,6 +4,7 @@ import Header from './components/header';
 import Banner from './components/banner';
 import Card from './components/card';
 import ProductList from './components/products';
+import Products from './components/products2';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
     <Header/>
     <Banner/>
     <Card/>
-    <ProductList/>
+    <Products/>
     
     </>
   );

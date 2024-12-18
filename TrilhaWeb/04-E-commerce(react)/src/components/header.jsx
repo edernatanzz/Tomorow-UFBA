@@ -51,6 +51,7 @@ function Header() {
         <Nav>
           <NavLink href="#">Register</NavLink>
           <NavLink href="#">Login</NavLink>
+          <button>cart</button>
         </Nav>
       </Container>
     </HeaderContainer>
